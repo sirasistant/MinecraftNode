@@ -1,0 +1,7 @@
+{
+	"backupFolderPath":"../",
+	"startMinecraftCommand":"./ServerStart.sh",
+	"dayOfWeek":"*",
+	"hour":"3",
+	"dayOfMonth":"*"
+}
