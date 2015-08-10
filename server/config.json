@@ -1,6 +1,8 @@
 {
-	"backupFolderPath":"../",
-	"startMinecraftCommand":"./ServerStart.sh",
+	"minecraftFolder":"../../ftbserver",
+	"backupFolderPath":"../../",
+	"startMinecraftCommand":"sh",
+	"startMinecraftFile":"ServerStart.sh",
 	"dayOfWeek":"*",
 	"hour":"3",
 	"dayOfMonth":"*"
