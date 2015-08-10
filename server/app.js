@@ -24,7 +24,7 @@ var backupAndRestart=function(){
 
 	console.log("Starting backup with name "+filename);
 
-	var backupCmd = 'tar -zcvf '+filename+' ./';
+	var backupCmd = 'tar -zcvf '+filename+' '+config.minecraftFolder;
 
 	exec(backupCmd, function(error, stdout, stderr) {
 		console.log("changing permissions to file");
@@ -40,7 +40,7 @@ var backupAndRestart=function(){
 }
 
 var startMinecraft=function(){
-	minecraftSrv = sudo([ 'sh', config.startMinecraftCommand ], sudoOptions);
+	minecraftSrv = sudo([  config.startMinecraftCommand,config.minecraftFolder+config.startMinecraftFile ], sudoOptions);
 
 	minecraftSrv.stdout.on('data', function (data) {
 		console.log(data.toString());
@@ -102,7 +102,7 @@ stdInput.on('line', function(line){
 	}
 });
 
-new CronJob('* * '+config.hour+' '+config.dayOfMonth+' * '+config.dayOfWeek, function() {
+new CronJob('0 0 '+config.hour+' '+config.dayOfMonth+' * '+config.dayOfWeek, function() {
 	if(state===STATE_RUNNING){
 		console.log('Backup running...');
 		state=STATE_BACKUP;
