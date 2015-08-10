@@ -20,7 +20,7 @@ var sudoOptions = {
 var minecraftSrv;
 
 var backupAndRestart=function(){
-	var filename=config.backupFolderPath+"./"+moment().format('D_M_YYYY_H_mm_ss')+'.tar.gz';
+	var filename=config.backupFolderPath+"/"+moment().format('D_M_YYYY_H_mm_ss')+'.tar.gz';
 
 	console.log("Starting backup with name "+filename);
 
@@ -40,7 +40,8 @@ var backupAndRestart=function(){
 }
 
 var startMinecraft=function(){
-	minecraftSrv = sudo([  config.startMinecraftCommand,config.minecraftFolder+"./"+config.startMinecraftFile ], sudoOptions);
+	console.log("Starting minecraft using command: "+"sudo "+[  config.startMinecraftCommand,config.minecraftFolder+"./"+config.startMinecraftFile ].join(" "));
+	minecraftSrv = sudo([  config.startMinecraftCommand,config.minecraftFolder+"/"+config.startMinecraftFile ], sudoOptions);
 
 	minecraftSrv.stdout.on('data', function (data) {
 		console.log(data.toString());
