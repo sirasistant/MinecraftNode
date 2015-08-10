@@ -40,7 +40,7 @@ var backupAndRestart=function(){
 }
 
 var startMinecraft=function(){
-	console.log("Starting minecraft using command: "+"sudo "+[  config.startMinecraftCommand,config.minecraftFolder+"./"+config.startMinecraftFile ].join(" "));
+	console.log("Starting minecraft using command: "+"sudo "+[  config.startMinecraftCommand,config.minecraftFolder+"/"+config.startMinecraftFile ].join(" "));
 	minecraftSrv = sudo([  config.startMinecraftCommand,config.minecraftFolder+"/"+config.startMinecraftFile ], sudoOptions);
 
 	minecraftSrv.stdout.on('data', function (data) {
