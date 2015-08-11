@@ -1,6 +1,6 @@
 ## What is this project able to do?
 
-Right now, this is a NodeJS wrapper for a minecraft server (It will forward all the stdin you input to the minecraft server and vice versa) that features automatic backup of the minecraft folder into a configurable destination on a programmable basis.
+Right now, this is a NodeJS wrapper for a minecraft server (It will forward all the stdin you input to the minecraft server and vice versa) that features automatic backup of the minecraft folder into a configurable destination on a programmable basis. Right now, it's only working on Linux, since it uses some terminal utilities.
 
 ## How to configure it?
 To configure it, you must edit the config.json file present in the server folder:
